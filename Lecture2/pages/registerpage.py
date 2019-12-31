@@ -14,11 +14,11 @@ class Registrer():
         self.password_id = "#register-password"
         self.countrydropdown_id = "#register-country"
 
-    def is_browser_on_the_hpage(self):
+    def is_browser_on_the_Mpage(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#footer-language-button')))
         return True
 
-    def is_browser_on_the_regpage(self):
+    def is_browser_on_the_registerpage(self):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[type="submit"]')))
         return True
 
