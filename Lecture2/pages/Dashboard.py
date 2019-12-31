@@ -8,4 +8,4 @@ class Dashboard():
 
     def is_browser_on_the_page(self):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.toggle-user-dropdown')))
-        return True
+        return True  
