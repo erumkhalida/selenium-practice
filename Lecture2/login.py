@@ -15,13 +15,13 @@ class McK_login(unittest.TestCase):
         self.login = LoginPage(self.driver)
         self.register = Registrer(self.driver)
         self.dashboard = Dashboard(self.driver)
-
-    def test_login(self):
+          #login to this site
+    def test_loginPage(self):
         self.driver.get("https://courses.edx.org")
-        self.assertTrue(self.login.is_browser_on_the_hpage())
+        self.assertTrue(self.login.is_browser_on_the_Mpage())
         self.driver.find_element_by_link_text('Sign In').click()  
 
-        #Page login  
+        #This is login Page
         self.assertTrue(self.login.is_browser_on_the_loginpage())        
         self.login.enter_username('erum.khalida@arbisoft.com')              
         self.login.enter_password('thispassword_11')
@@ -30,20 +30,20 @@ class McK_login(unittest.TestCase):
         self.login.logout()
 
 
-        self.assertTrue(self.register.is_browser_on_the_hpage())
+        self.assertTrue(self.register.is_browser_on_the_Mpage())
         
-        #Page Register    
+        #this is Register Page    
         self.driver.find_element_by_link_text('Register').click()
-        self.assertTrue(self.register.is_browser_on_the_regpage())
-        self.register.regemail('')
-        self.register.regname('')
-        self.register.regusername('')
-        self.register.regpassword('')
-        self.register.regcountry('')
+        self.assertTrue(self.register.is_browser_on_the_registerpage())
+        self.register.regemail('erumkhalida@yopmail.com')
+        self.register.regname('erumk')
+        self.register.regusername('erumk123')
+        self.register.regpassword('123abc__')
+        self.register.regcountry('Pakistan')
         self.register.submitButton()
         self.assertTrue(self.dashboard.is_browser_on_the_page())
         self.register.logout()
-        self.assertTrue(self.register.is_browser_on_the_hpage())
+        self.assertTrue(self.register.is_browser_on_the_Mpage())
         
     def tearDown(self):
         self.driver.close()
